@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "680087947191",
+    "project_id": "ojosksa-112d4",
+    "storage_bucket": "ojosksa-112d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:680087947191:android:b39df6d427524d98c00a32",
+        "android_client_info": {
+          "package_name": "com.tatbiqakum.ojos_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "680087947191-rlmbtmk5oqle6e09jrd08dbpkbj89cue.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tatbiqakum.ojos_app",
+            "certificate_hash": "8f30f462bfc6427ffe7e6ec0f674ce5ff1540b86"
+          }
+        },
+        {
+          "client_id": "680087947191-6qjdu3a50e4vho4g5vr0sngqlms3tu6q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtpu_5kc6H5qkHN-RenjR0NeoX_ebyyHM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "680087947191-6qjdu3a50e4vho4g5vr0sngqlms3tu6q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "680087947191-4sj30ofl2djoi1ni34vco19p17qr09as.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "cc.pa.na",
+                "app_store_id": "14256452"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
