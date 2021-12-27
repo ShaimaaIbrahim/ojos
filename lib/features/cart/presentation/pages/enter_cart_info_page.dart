@@ -801,7 +801,7 @@ class _EnterCartInfoPageState extends State<EnterCartInfoPage> {
                                                               _street,
                                                           delivery_zipcode:
                                                               _country,
-                                                        ));
+                                                        ), lenses_img: '');
                                                 print(
                                                     'Order Request ${request.toJson()}');
 

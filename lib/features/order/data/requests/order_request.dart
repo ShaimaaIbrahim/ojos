@@ -17,6 +17,7 @@ class OrderRequest {
   final String? point_map;
   final String? note;
   final int? coupon_id;
+  final String? lenses_img;
   final String? couponcode;
   final List<ProductOrderRequest>? listorder;
   final CardOrderRequest? card;
@@ -24,7 +25,8 @@ class OrderRequest {
 
   OrderRequest(
       {required this.tax,
-      required this.total,
+        required this.lenses_img,
+        required this.total,
       required this.shipping_fee,
       required this.orginal_price,
       required this.price_discount,

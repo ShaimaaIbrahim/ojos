@@ -30,7 +30,7 @@ OrderRequest _$OrderRequestFromJson(Map<String, dynamic> json) {
         ? null
         : DeliveryOrderRequest.fromJson(
             json['delivery'] as Map<String, dynamic>),
-    shipping_id: json['shipping_id'] as int?,
+    shipping_id: json['shipping_id'] as int?, lenses_img: json['lenses_img'],
   );
 }
 
@@ -52,6 +52,7 @@ Map<String, dynamic> _$OrderRequestToJson(OrderRequest instance) =>
       'listorder': instance.listorder,
       'card': instance.card,
       'delivery': instance.delivery,
+      'lenses_img': instance.lenses_img
     };
 
 ProductOrderRequest _$ProductOrderRequestFromJson(Map<String, dynamic> json) {

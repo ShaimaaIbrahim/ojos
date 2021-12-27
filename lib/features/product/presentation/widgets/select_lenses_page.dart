@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:ojos_app/core/appConfig.dart';
 import 'package:ojos_app/core/entities/brand_entity.dart';
 import 'package:ojos_app/core/localization/translations.dart';
@@ -52,6 +53,79 @@ class SelectLensesPage extends StatefulWidget {
 }
 
 class _SelectLensesPageState extends State<SelectLensesPage> {
+  String pickedFilePath = "";
+
+  void _openGallery(
+    BuildContext context,
+  ) async {
+    final pickedFile = await ImagePicker().getImage(
+      source: ImageSource.gallery,
+    );
+    setState(() {
+      pickedFilePath = pickedFile!.path;
+    });
+  }
+
+  void _openCamera(BuildContext context) async {
+    final pickedFile = await ImagePicker().getImage(
+      source: ImageSource.camera,
+    );
+    setState(() {
+      pickedFilePath = pickedFile!.path;
+    });
+  }
+
+  Future<void> _showChoiceDialog(
+    BuildContext context,
+  ) {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(
+              "Choose option",
+              style: TextStyle(color: globalColor.primaryColor),
+            ),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: [
+                  Divider(
+                    height: 1,
+                    color: globalColor.primaryColor,
+                  ),
+                  ListTile(
+                    onTap: () {
+                      _openGallery(
+                        context,
+                      );
+                    },
+                    title: Text("Gallery"),
+                    leading: Icon(
+                      Icons.account_box,
+                      color: globalColor.primaryColor,
+                    ),
+                  ),
+                  Divider(
+                    height: 1,
+                    color: globalColor.primaryColor,
+                  ),
+                  ListTile(
+                    onTap: () {
+                      _openCamera(context);
+                    },
+                    title: Text("Camera"),
+                    leading: Icon(
+                      Icons.camera,
+                      color: globalColor.primaryColor,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        });
+  }
+
   List<String> list = [
     AppAssets.product_details_1,
     AppAssets.product_details_1,
@@ -84,6 +158,7 @@ class _SelectLensesPageState extends State<SelectLensesPage> {
   final args = Get.Get.arguments as ProductDetailsArguments;
 
   BrandEntity? companyLenses;
+
   @override
   void initState() {
     super.initState();
@@ -468,38 +543,43 @@ class _SelectLensesPageState extends State<SelectLensesPage> {
         EdgeMargin.small,
         EdgeMargin.verySub,
       ),
-      child: Container(
-        width: width,
-        height: 46.h,
-        decoration: BoxDecoration(
-            color: globalColor.white,
-            borderRadius: BorderRadius.all(Radius.circular(12.w)),
-            border: Border.all(
-                color: globalColor.grey.withOpacity(0.3), width: 0.5)),
-        padding: const EdgeInsets.fromLTRB(
-            EdgeMargin.min, EdgeMargin.sub, EdgeMargin.min, EdgeMargin.sub),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              flex: 4,
-              child: Container(
-                child: Text(
-                  Translations.of(context)
-                      .translate('attach_the_size_of_the_lenses'),
-                  style: textStyle.smallTSBasic.copyWith(
-                      fontWeight: FontWeight.w500, color: globalColor.black),
+      child: InkWell(
+        onTap: () {
+          _showChoiceDialog(context);
+        },
+        child: Container(
+          width: width,
+          height: 46.h,
+          decoration: BoxDecoration(
+              color: globalColor.white,
+              borderRadius: BorderRadius.all(Radius.circular(12.w)),
+              border: Border.all(
+                  color: globalColor.grey.withOpacity(0.3), width: 0.5)),
+          padding: const EdgeInsets.fromLTRB(
+              EdgeMargin.min, EdgeMargin.sub, EdgeMargin.min, EdgeMargin.sub),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                flex: 4,
+                child: Container(
+                  child: Text(
+                    Translations.of(context)
+                        .translate('attach_the_size_of_the_lenses'),
+                    style: textStyle.smallTSBasic.copyWith(
+                        fontWeight: FontWeight.w500, color: globalColor.black),
+                  ),
                 ),
               ),
-            ),
-            Icon(
-              utils.getLang() == 'ar'
-                  ? Icons.keyboard_arrow_left
-                  : Icons.keyboard_arrow_right,
-              size: 25.w,
-              color: globalColor.black,
-            ),
-          ],
+              Icon(
+                utils.getLang() == 'ar'
+                    ? Icons.keyboard_arrow_left
+                    : Icons.keyboard_arrow_right,
+                size: 25.w,
+                color: globalColor.black,
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -8,7 +8,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.13.3 <3.0.0"
+  sdk: ">=2.14.4 <3.0.0"
 
 dependencies:
   flutter:
@@ -45,7 +45,7 @@ dependencies:
   flutter_svg: ^0.22.0
   carousel_slider: ^4.0.0
   percent_indicator: ^3.0.1
-  open_whatsapp: ^0.0.1
+  #open_whatsapp: ^0.0.1
   flutter_launcher_icons: ^0.9.1
   persistent_bottom_nav_bar: ^4.0.2
   get: ^4.3.4

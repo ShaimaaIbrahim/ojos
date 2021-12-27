@@ -41,11 +41,13 @@ class ConcreteOrderRemoteDataSource extends OrderRemoteDataSource {
     return request<Object, EmptyResponse>(
       responseStr: 'EmptyResponse',
       converter: (json) => EmptyResponse.fromJson(json),
-      method: HttpMethod.POST,
       withAuthentication: true,
       url: API_SEND_ORDER,
       data: orderRequest.toJson(),
       cancelToken: cancelToken,
+      method: HttpMethod.POST,
+      // filePath: ,
+      // fileKey: '',
     );
   }
 

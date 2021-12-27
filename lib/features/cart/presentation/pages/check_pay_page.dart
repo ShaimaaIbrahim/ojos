@@ -436,7 +436,8 @@ class _CheckAndPayPageState extends State<CheckAndPayPage> {
                       method_id: _selectedPaymentMethod.id,
                       user_address_id: args.city_id,
                       card: null,
-                      delivery: args.deliveryOrder);
+                      delivery: args.deliveryOrder,
+                      lenses_img: '');
                   print('Order Request ${request.toJson()}');
 
                   _bloc.add(GetSendOrderEvent(
