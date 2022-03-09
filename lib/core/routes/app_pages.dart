@@ -32,6 +32,7 @@ import 'package:ojos_app/features/search/presentation/pages/filter_search_page.d
 import 'package:ojos_app/features/search/presentation/pages/search_page.dart';
 import 'package:ojos_app/features/section/presentation/pages/section_page.dart';
 import 'package:ojos_app/features/splash_screen.dart';
+import 'package:ojos_app/features/test/presentation/pages/main_test_page.dart';
 // import 'package:ojos_app/features/test/presentation/pages/main_test_page.dart';
 // import 'package:ojos_app/features/test/presentation/pages/test_result_page.dart';
 // import 'package:ojos_app/features/test/presentation/pages/test_result_view_all_page.dart';
@@ -53,6 +54,11 @@ class AppPages {
       page: () => SplashScreen(),
     ),
 
+    //test page
+    GetPage(
+      name: MainTestPage.routeName,
+      page: () => MainTestPage(),
+    ),
     /// user management pages
     GetPage(
       name: SignInPage.routeName,

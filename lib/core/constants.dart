@@ -11,7 +11,7 @@ const HEADER_CONTENT_TYPE = 'Content-Type';
 const HEADER_ACCEPT = 'Accept';
 const GSM = GSM2;
 const GSM1 = '+40';
-const GSM2 = '+966';
+const GSM2 = '+2';
 
 // ====================  APP_NAME API URL ====================
 const API_BASE = 'https://ojosksa.com/api/auth';

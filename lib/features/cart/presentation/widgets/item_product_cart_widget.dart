@@ -421,7 +421,8 @@ class _ItemProductHomeWidgetState extends State<ItemProductCartWidget> {
                         ),
                       ],
                     ),
-                    !(widget.item.isGlasses ?? true)
+                    //widget.item.isGlasses ?? true &&
+                    (widget.item.argsForGlasses!.fileImage=="" &&  widget.item.argsForGlasses!=null)
                         ? Column(
                             children: [
                               _buildLensesSizeForRightEyessWidget(
@@ -436,69 +437,62 @@ class _ItemProductHomeWidgetState extends State<ItemProductCartWidget> {
                                   height: height,
                                   title: Translations.of(context)
                                       .translate('lens_size_for_left_eye')),
-
-                              // _buildLensesSizeForEyessWidget(
-                              //     context: context,
-                              //     width: width,
-                              //     height: height,
-                              //     title: 'test'
-                              // ),
                               _buildEnterDimensionsOfLensesWidget(
                                   context: context,
                                   width: width,
                                   height: height),
                             ],
                           )
-                        : widget.item.argsForGlasses != null
-                            ? Column(
-                                children: [
-                                  _buildSelectLensesTypeWidget(
-                                      context: context,
-                                      width: width,
-                                      height: height,
-                                      title: widget.item.argsForGlasses?.type ==
-                                              TypeOfLensesChoose.Medical
-                                          ? Translations.of(context)
-                                              .translate('Medical')
-                                          : Translations.of(context)
-                                              .translate('Zenia')),
-
-                                  // _buildSelectCompanyWidget(
-                                  //     context: context,
-                                  //     width: width,
-                                  //     height: 50.h),
-                                  _buildLensCompanyTitleWidget(
-                                    context: context,
-                                    width: width,
-                                    height: height,
-                                    brandEntity: widget
-                                        .item.argsForGlasses?.companyLenses,
-                                  ),
-
-                                  _buildLensesColorWidget(
-                                      context: context,
-                                      width: width,
-                                      height: height,
-                                      color: widget
-                                          .item.argsForGlasses?.colorSelect),
-                                  _buildLensesSizeForRightEyessWidget(
-                                      context: context,
-                                      width: width,
-                                      height: height,
-                                      title: Translations.of(context).translate(
-                                          'lens_size_for_right_eye')),
-                                  _buildLensesSizeForLeftEyessWidget(
-                                      context: context,
-                                      width: width,
-                                      height: height,
-                                      title: Translations.of(context)
-                                          .translate('lens_size_for_left_eye')),
-                                  _buildEnterDimensionsOfLensesWidget(
-                                      context: context,
-                                      width: width,
-                                      height: height),
-                                ],
-                              )
+                        // : widget.item.argsForGlasses != null
+                        //     ? Column(
+                        //         children: [
+                        //           _buildSelectLensesTypeWidget(
+                        //               context: context,
+                        //               width: width,
+                        //               height: height,
+                        //               title: widget.item.argsForGlasses?.type ==
+                        //                       TypeOfLensesChoose.Medical
+                        //                   ? Translations.of(context)
+                        //                       .translate('Medical')
+                        //                   : Translations.of(context)
+                        //                       .translate('Zenia')),
+                        //
+                        //           // _buildSelectCompanyWidget(
+                        //           //     context: context,
+                        //           //     width: width,
+                        //           //     height: 50.h),
+                        //           _buildLensCompanyTitleWidget(
+                        //             context: context,
+                        //             width: width,
+                        //             height: height,
+                        //             brandEntity: widget
+                        //                 .item.argsForGlasses?.companyLenses,
+                        //           ),
+                        //
+                        //           _buildLensesColorWidget(
+                        //               context: context,
+                        //               width: width,
+                        //               height: height,
+                        //               color: widget
+                        //                   .item.argsForGlasses?.colorSelect),
+                        //           _buildLensesSizeForRightEyessWidget(
+                        //               context: context,
+                        //               width: width,
+                        //               height: height,
+                        //               title: Translations.of(context).translate(
+                        //                   'lens_size_for_right_eye')),
+                        //           _buildLensesSizeForLeftEyessWidget(
+                        //               context: context,
+                        //               width: width,
+                        //               height: height,
+                        //               title: Translations.of(context)
+                        //                   .translate('lens_size_for_left_eye')),
+                        //           _buildEnterDimensionsOfLensesWidget(
+                        //               context: context,
+                        //               width: width,
+                        //               height: height),
+                        //         ],
+                        //       )
                             : Container()
                   ],
                 ),

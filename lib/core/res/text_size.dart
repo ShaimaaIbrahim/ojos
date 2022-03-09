@@ -1,17 +1,16 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 class GlobalTextSize {
-  final huge = 130.ssp;
-  final lager = 30.ssp;
-  final subLarge = 25.ssp;
-  final big = 23.ssp;
-  final subBig = 20.ssp;
-  final normal = 18.ssp;
-  final middle = 16.ssp;
-  final small = 14.ssp;
-  final min = 12.ssp;
-  final subMin = 11.ssp;
-  final sub2Min = 9.ssp;
+  final huge = 130.sp;
+  final lager = 30.sp;
+  final subLarge = 25.sp;
+  final big = 23.sp;
+  final subBig = 20.sp;
+  final normal = 18.sp;
+  final middle = 16.sp;
+  final small = 14.sp;
+  final min = 12.sp;
+  final subMin = 11.sp;
+  final sub2Min = 9.sp;
 }
 
 GlobalTextSize textSize = GlobalTextSize();

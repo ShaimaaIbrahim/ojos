@@ -5,6 +5,7 @@
   "err_not_verified": "الرجاء تأكيد حسابك للمتابعة",
 
   "retry": "إعادة المحاولة",
+  "the_discount": "الخصم",
   "register_new_account": "تسجيل حساب جديد",
   "verify_your_account": "التحقق من حسابك",
   "verify_your_email": "التحقق من البريد الإلكتروني",
@@ -296,6 +297,7 @@
   "final_total":"الاجمالي النهائي",
   "total_original_price":"اجمالي السعر الأصلي",
   "total_after_discount":"الإجمالي بعد الخصم",
+  "percent": "نسبة",
   "payment_fees_on_receipt":"رسوم الدفع عند الاستلام",
   "msg_error_less_length": "يجب أن يتألف الأسم من 10 أحرف على الأقل",
   "msg_code_missing": "الرجاء و قم بأدخال الرمز",

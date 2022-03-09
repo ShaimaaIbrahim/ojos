@@ -11,9 +11,11 @@ class SelectLensesArgs {
   final TypeOfLensesChoose? type;
   final BrandEntity? companyLenses;
   final GeneralItemEntity? colorSelect;
+  final String fileImage;
 
   const SelectLensesArgs(
       {this.type,
+       required this.fileImage,
       this.lensSize,
       this.sizeForLeftEye,
       this.sizeForRightEye,

@@ -727,12 +727,17 @@ class _CartPageState extends State<CartPage> {
                 color: globalColor.white, fontWeight: FontWeight.bold),
           ),
           Text(
+            Translations.of(context).translate('percent'),
+            style: textStyle.middleTSBasic.copyWith(
+                color: globalColor.white, fontWeight: FontWeight.bold),
+          ),
+          Text(
             '${couponInfoSuccess.discount ?? ''}',
             style: textStyle.bigTSBasic.copyWith(
                 color: globalColor.goldColor, fontWeight: FontWeight.bold),
           ),
           Text(
-            '${Translations.of(context).translate('rail')} ${Translations.of(context).translate('from_code')} ',
+            '${Translations.of(context).translate('%')} ${Translations.of(context).translate('from_code')} ',
             style: textStyle.middleTSBasic.copyWith(
                 color: globalColor.white, fontWeight: FontWeight.bold),
           ),

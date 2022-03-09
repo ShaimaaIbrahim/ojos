@@ -63,6 +63,8 @@ class _SelectLensesPageState extends State<SelectLensesPage> {
     );
     setState(() {
       pickedFilePath = pickedFile!.path;
+      appConfig.showToast(msg: 'Added successfully');
+      Navigator.of(context).pop();
     });
   }
 
@@ -72,6 +74,8 @@ class _SelectLensesPageState extends State<SelectLensesPage> {
     );
     setState(() {
       pickedFilePath = pickedFile!.path;
+      appConfig.showToast(msg: 'Added successfully');
+      Navigator.of(context).pop();
     });
   }
 
@@ -793,13 +797,13 @@ class _SelectLensesPageState extends State<SelectLensesPage> {
                 ),
               ),
             ),
-            Icon(
-              utils.getLang() == 'ar'
-                  ? Icons.keyboard_arrow_left
-                  : Icons.keyboard_arrow_right,
-              size: 25.w,
-              color: globalColor.black,
-            ),
+            // Icon(
+            //   utils.getLang() == 'ar'
+            //       ? Icons.keyboard_arrow_left
+            //       : Icons.keyboard_arrow_right,
+            //   size: 25.w,
+            //   color: globalColor.black,
+            // ),
           ],
         ),
       ),
@@ -1019,6 +1023,7 @@ class _SelectLensesPageState extends State<SelectLensesPage> {
                   if (_checkStatus()) {
                     Get.Get.back(
                         result: SelectLensesArgs(
+                      fileImage: pickedFilePath,
                       type: _chooseType,
                       lensSize: _selectedForAddIPD,
                       colorSelect: _colorSelect,
@@ -1071,12 +1076,16 @@ class _SelectLensesPageState extends State<SelectLensesPage> {
     // print('_ipd ${_ipd}');
     print('_selectedForLeftEye ${_selectedForLeftEye.toString()}');
     print('_selectedForRightEye ${_selectedForRightEye.toString()}');
-    return _selectedForAddIPD != null &&
-        _selectedForLeftEye != null &&
-        _selectedForRightEye != null &&
-        companyLenses != null &&
-        _colorSelect != null &&
-        _chooseType != null;
+    if(pickedFilePath==""){
+      return _selectedForAddIPD != null &&
+          _selectedForLeftEye != null &&
+          _selectedForRightEye != null &&
+          companyLenses != null &&
+          _colorSelect != null &&
+          _chooseType != null;
+    }else {
+      return pickedFilePath!="";
+    }
   }
 }
 

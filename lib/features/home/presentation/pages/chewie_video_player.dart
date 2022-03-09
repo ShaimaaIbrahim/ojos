@@ -22,10 +22,11 @@ class _ChewieDemoState extends State<OJOSVideoPlayer> {
   // VideoPlayerController _videoPlayerController2;
   late ChewieController? _chewieController;
 
+
   @override
   void initState() {
     super.initState();
-    initializePlayer();
+   // initializePlayer();
   }
 
   @override
@@ -39,7 +40,7 @@ class _ChewieDemoState extends State<OJOSVideoPlayer> {
   Future<void>? _initializeVideoPlayerFuture;
   Future<void> initializePlayer() async {
     print('args video link $args');
-    _videoPlayerController1 = VideoPlayerController.network(args);
+    _videoPlayerController1 = VideoPlayerController.network('https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4');
     await _videoPlayerController1?.initialize();
     // _videoPlayerController2 = VideoPlayerController.network(
     //     widget.videoUrl);
@@ -71,6 +72,8 @@ class _ChewieDemoState extends State<OJOSVideoPlayer> {
 
   @override
   Widget build(BuildContext context) {
+    initializePlayer();
+
     AppBar appBar = AppBar(
       backgroundColor: globalColor.appBar,
       brightness: Brightness.light,
